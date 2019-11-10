@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap')
+@import 'partials/_color.vars.sass'
+@import 'partials/_font.vars.sass'
+@import 'partials/_layout.vars.sass'  
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Roboto'
+    border: 0
+
+html 
+    width: 100%
+    height: auto
+
+    body
+        width: 100%
+        height: auto
+        background-color: #eee
+
+    div
+        width: auto
+
+    ul
+        list-style: none
+        display: block
+        width: 100%
+
+    a, p, b, div, span, button, input
+        font-size: $text-size
+        font-weight: inherit
+        
+    a
+        text-decoration: none
+        color: inherit
+        cursor: pointer
+
+    a:active, 
+    a:hover 
+        outline: 0
+
+    button
+        background-color: transparent
+        color: inherit
+        border-width: 0
+        padding: 0
+        cursor: pointer
+
+    input::-moz-focus-inner 
+        border: 0
+        padding: 0 
+        margin: 0
+        
+.flex
+    display: flex
+    flex-wrap: wrap
+    &--center
+        justify-content: center
+    &--left
+        justify-content: flex-start
+    &--right
+        justify-content: flex-end
+    &--centered
+        align-items: center
+
+
+// h1,h2,h3,h4,h5,h6

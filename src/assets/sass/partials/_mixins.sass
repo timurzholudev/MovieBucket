@@ -1,0 +1,17 @@
+@import 'partials/_screen-sizes.var.sass'
+
+@mixin media-smUp
+    @media #{$screen-sm-min}
+        @content
+        
+@mixin media-mdUp
+   @media #{$screen-md-min}
+       @content
+
+@mixin media-lgUp
+   @media #{$screen-lg-min}
+       @content
+
+@mixin media-xlUp
+   @media #{$screen-xl-min}
+       @content

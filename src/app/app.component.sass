@@ -1,0 +1,38 @@
+@import 'partials/_color.vars.sass'
+@import 'partials/_layout.vars.sass'  
+@import 'partials/_mixins.sass'  
+    
+.wrapper
+    width: 100%
+    height: auto
+    min-height: 100vh
+    background-color: $primary-color
+    
+    @include media-mdUp
+        padding:  0 0 0 $navbar-item-large-size
+        
+    .content 
+        width: 100%
+        height: auto
+        min-height: 100%
+
+side-nav 
+    display: block
+    width: 100%
+    height: $navbar-item-size
+    background-color: $secondary-color
+    
+    @include media-mdUp
+        height: 100vh
+        width: $navbar-item-large-size
+        position: fixed
+        top: 0
+        left: 0
+
+
+toolbar
+    display: block
+    width: 100%
+    height: auto
+    // height: $navbar-item-size
+    background-color: $dark-color

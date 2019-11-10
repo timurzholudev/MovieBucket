@@ -1,0 +1,59 @@
+@import 'partials/_color.vars.sass'
+@import 'partials/_font.vars.sass'
+@import 'partials/_layout.vars.sass'  
+@import 'partials/_mixins.sass'  
+@import 'partials/_screen-sizes.var.sass'
+
+.container
+    .main-logo
+        width: $navbar-item-size
+        height: $navbar-item-size
+        background-color: $blue-color
+
+        &__name
+            color: $white-color
+            font-weight: bold
+            font-size: 0.9rem
+            line-height: 1.1rem
+            letter-spacing: -1px
+
+        @include media-mdUp
+            width: $navbar-item-large-size
+            height: $navbar-item-large-size
+
+    .navbar
+        width: auto
+        &__list
+            border: 0
+        &__item
+            width: $navbar-item-size
+            height: $navbar-item-size
+
+            &--selected
+                background-color: $navbar-selected-color
+            
+            @include media-mdUp
+                width: $navbar-item-large-size
+                height: $navbar-item-large-size
+                
+                &:hover 
+                    background-color: $blue-color
+                    transition: all 0.3s ease-in
+
+        &__link
+            width: 100%
+            height: 100%
+            color: $white-color
+            flex-direction: column
+
+        &__ico
+            display: block
+            margin: 0
+            padding: 0
+            width: 25px
+            height: 25px
+
+        &__desc
+            display: block
+            font-size: $text-small-size
+
