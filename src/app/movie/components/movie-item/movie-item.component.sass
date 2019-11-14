@@ -1,0 +1,61 @@
+@import 'partials/_color.vars.sass'
+@import 'partials/_mixins.sass'  
+
+    
+.movie
+    display: block
+    width: 100%
+    height: auto
+
+    @include media-smUp
+        display: flex
+        flex-wrap: wrap
+        justify-content: left
+
+    &-cover
+        width: 100%
+        margin-bottom: 24px
+
+        @include media-smUp
+            width: 200px
+
+        &__img
+            display: block
+            border: none
+
+            @include media-smUp
+                width: 100%
+                height: auto
+
+    &-info
+        color: $white-color
+
+        @include media-smUp
+            width: calc(100% - 200px)
+            padding: 24px 0 0 24px
+
+        &__title
+            font-size: 3rem
+            font-weight: 400
+            line-height: 2.4rem
+            margin-bottom: 16px
+
+        &__data
+            display: block
+
+        &__text
+            display: inline-block
+            opacity: 0.65
+            margin-bottom: 8px
+
+            &--tl
+                width: 60px
+
+        &__description
+            margin-top: 16px
+            font-weight: 400
+            font-size: 0.9rem
+            line-height: 1.6rem
+    &-loading
+        height: auto
+        min-height: 200px

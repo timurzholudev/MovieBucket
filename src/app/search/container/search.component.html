@@ -1,0 +1,11 @@
+<div class="search">
+    <div class="search__header">
+        <h1 class="search__header-title">Search Result: {{searchReq}}</h1>
+        <p class="search__header-match">You have {{resultLength}} match</p>
+        <span class="search__header-split"></span>
+    </div>
+    <div class="search__content">
+        <movie-item *ngFor="let movie of searchResult$ | async"
+                    [movie]="movie"></movie-item>
+    </div>
+</div>

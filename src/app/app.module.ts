@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { StoreModule } from '@ngrx/store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { EffectsModule } from '@ngrx/effects';
+import { reducers } from './state'
+import { MovieEffects } from './state/movies/effect'
 // <-- NGRX END
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,8 +23,8 @@ import { AppComponent } from './app.component';
         AppRoutingModule,
         HttpClientModule,
         CoreModule,
-        StoreModule.forRoot({}),
-        EffectsModule.forRoot([]),
+        StoreModule.forRoot(reducers),
+        EffectsModule.forRoot([MovieEffects]),
         StoreDevtoolsModule.instrument({
             name: 'Movies Bucket',
             maxAge: 25,

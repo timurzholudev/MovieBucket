@@ -1,0 +1,38 @@
+@import 'partials/_color.vars.sass'
+@import 'partials/_mixins.sass'
+
+.movie
+    width: 100%
+
+    &__cover
+        display: block
+        width: 100%
+        height: auto
+        border: none
+
+    &__data
+        margin-top: 8px
+
+    &__title
+        color: $white-color
+        font-size: 0.9rem
+
+    &__info
+        justify-content: space-between
+        color: $white-color
+        font-size: 0.55rem
+        font-weight: 400
+        opacity: 0.8
+
+    &__genres,
+    &__rating
+        font-size: inherit
+        opacity: inherit
+
+    &__genres
+        * 
+            font-size: inherit
+            opacity: inherit
+            margin-right: 4px
+            text-transform: capitalize
+    

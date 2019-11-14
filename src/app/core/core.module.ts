@@ -1,24 +1,25 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { SideNavComponent } from './side-nav/side-nav.component';
-import { FooterComponent } from './footer/footer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        RouterModule,
+        ReactiveFormsModule
     ],
     declarations: [
         SideNavComponent,
-        FooterComponent,
-        ToolbarComponent
+        ToolbarComponent,
     ],
     providers: [
 
     ],
     exports: [
         SideNavComponent,
-        FooterComponent,
         ToolbarComponent
     ]
 })

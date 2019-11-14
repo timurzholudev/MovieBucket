@@ -1,0 +1,50 @@
+@import 'partials/_color.vars.sass'
+@import 'partials/_layout.vars.sass'
+@import 'partials/_mixins.sass'
+
+$distance: 16px    
+
+.search
+    width: 100%
+    display: block
+    max-width: $max-width
+    margin: 16px auto 0
+    padding: 24px 16px 16px
+    position: relative
+
+    &__header
+        color: $white-color
+        padding: 0 16px
+        
+        &-title
+            font-size: 1.4rem
+        &-match
+            font-size: 0.9rem
+            margin-top: 8px
+        &-split
+            display: block
+            width: 200px
+            height: 1px
+            background-color: $white-color
+            margin: 8px 0 16px 0
+
+    &__content
+        display: grid
+        grid-gap: $distance
+        grid-template-columns: repeat(2, 1fr)
+        grid-auto-rows: 1fr
+        padding: $distance
+
+        @include media-smUp
+            grid-template-columns: repeat(3, 1fr)
+
+        @include media-mdUp
+            grid-template-columns: repeat(4, 1fr)
+
+        @include media-lgUp
+            grid-template-columns: repeat(5, 1fr)
+
+        @include media-xlUp
+            grid-template-columns: repeat(6, 1fr)
+
+

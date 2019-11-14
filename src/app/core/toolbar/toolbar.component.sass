@@ -9,6 +9,10 @@ $elem-length: 50px
 .toolbar
     &__content
         width: 100%
+        max-width: $max-width
+        margin: 0 auto
+        display: flex
+        flex-wrap: wrap
 
         @include media-mdUp
             display: flex
@@ -16,17 +20,23 @@ $elem-length: 50px
             flex-wrap: wrap
             justify-content: space-between
             align-items: center
-            padding: 0 24px
+            padding: 0 16px
 
 .search
     width: $full-length
     height: $elem-length
+    order: 2
+    position: relative
+    justify-content: space-between
 
     &__group
+        width: calc(100% - 50px)
         display: block
-        width: $full-length
         height: $full-length
         position: relative
+
+        @include media-mdUp
+            width: calc(100% - 35px)
 
     &__field
         width: $full-length
@@ -36,28 +46,27 @@ $elem-length: 50px
         padding: 8px 16px
         outline: none !important
         
-        @include media-mdUp
-            border-radius: 3px
+    @include media-mdUp
+        border-radius: 3px
+        order: 1
 
-    &__icon
-        position: absolute
-        width: $elem-length
-        height: $elem-length
-        top: 0
-        right: 0
+    &__btn
+        width: 50px
+        height: 50px
+        background-color: $blue-color
+        
+        @include media-mdUp
+            width: 35px
+            height: 35px
 
     &__icon-svg
         width: 20px
         height: 20px
-        fill: $primary-color
+        fill: $white-color
     
     @include media-mdUp
         width: 250px
         height: 35px
-
-        &__icon
-            width: 35px
-            height: 35px
 
         &__icon-svg
             width: 15px
@@ -69,7 +78,7 @@ $elem-length: 50px
     width: $full-length
     height: $navbar-item-size
     justify-content: space-between
-    padding: 0 16px
+    padding: 0
 
     &-notification
         width: 40px
@@ -92,3 +101,4 @@ $elem-length: 50px
     @include media-mdUp
         width: 185px
         height: 35px
+        order: 2

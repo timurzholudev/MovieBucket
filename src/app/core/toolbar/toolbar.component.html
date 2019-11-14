@@ -1,28 +1,56 @@
 <div class="toolbar">
-  <div class="toolbar__content">
-    <div class="search">
-      <label class="search__group">
-        <input class="search__field" type="search" placeholder="Search" />
-        <span class="search__icon flex flex--center flex--centered">
-          <svg class="search__icon-svg" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 451 451" style="enable-background:new 0 0 451 451;" xml:space="preserve">
-            <path
-              d="M447.05,428l-109.6-109.6c29.4-33.8,47.2-77.9,47.2-126.1C384.65,86.2,298.35,0,192.35,0C86.25,0,0.05,86.3,0.05,192.3
-                   s86.3,192.3,192.3,192.3c48.2,0,92.3-17.8,126.1-47.2L428.05,447c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4
-                   C452.25,441.8,452.25,433.2,447.05,428z M26.95,192.3c0-91.2,74.2-165.3,165.3-165.3c91.2,0,165.3,74.2,165.3,165.3
-                   s-74.1,165.4-165.3,165.4C101.15,357.7,26.95,283.5,26.95,192.3z"
-            />
-          </svg>
-        </span>
-      </label>
+    <div class="toolbar__content">
+        <form [formGroup]="form"
+              (ngSubmit)="form.valid && search()"
+              class="search flex"
+              novalidate>
+            <label class="search__group">
+                <input formControlName="search"
+                       class="search__field"
+                       type="search"
+                       placeholder="Search" />
+                <!-- <span class="search__icon flex flex--center flex--centered">
+                </span> -->
+            </label>
+            <button class="search__btn flex flex--center flex--centered">
+                <svg class="search__icon-svg"
+                     version="1.1"
+                     id="Capa_1"
+                     xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     x="0px"
+                     y="0px"
+                     viewBox="0 0 451 451"
+                     style="enable-background:new 0 0 451 451;"
+                     xml:space="preserve">
+                    <path d="M447.05,428l-109.6-109.6c29.4-33.8,47.2-77.9,47.2-126.1C384.65,86.2,298.35,0,192.35,0C86.25,0,0.05,86.3,0.05,192.3
+              s86.3,192.3,192.3,192.3c48.2,0,92.3-17.8,126.1-47.2L428.05,447c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4
+              C452.25,441.8,452.25,433.2,447.05,428z M26.95,192.3c0-91.2,74.2-165.3,165.3-165.3c91.2,0,165.3,74.2,165.3,165.3
+              s-74.1,165.4-165.3,165.4C101.15,357.7,26.95,283.5,26.95,192.3z" />
+                </svg>
+            </button>
+        </form>
+        <div class="controls flex flex--centered">
+            <span class="controls-notification flex flex--center flex--centered">
+                <svg class="controls-notification__svg"
+                     id="notification"
+                     data-name="Group 2"
+                     xmlns="http://www.w3.org/2000/svg"
+                     width="212.573"
+                     height="264.414"
+                     viewBox="0 0 212.573 264.414">
+                    <path data-name="Union 1"
+                          d="M0,226.1V208.633a112.039,112.039,0,0,0,19.8-40.519c6.349-24.557,5.594-43.528,5.594-57.712A80.327,80.327,0,0,1,85.613,32.639V7a7,7,0,0,1,7-7H118.76a7,7,0,0,1,7,7V32.62c34.971,8.894,61.55,40.389,61.55,77.834,0,12.249-1.408,30.408,5.495,54.677a172.445,172.445,0,0,0,19.768,43.5V226.1Z"
+                          transform="translate(0 0)"
+                          fill="#fff" />
+                    <path data-name="Subtraction 1"
+                          d="M38.989,30H11A11,11,0,0,1,0,19V0H49.989V19a11,11,0,0,1-11,11Z"
+                          transform="translate(81.094 234.413)"
+                          fill="#fff" />
+                </svg>
+            </span>
+            <a class="controls-auth"
+               routerLink="/">Sign In</a>
+        </div>
     </div>
-    <div class="controls flex flex--centered">
-      <span class="controls-notification flex flex--center flex--centered">
-        <svg class="controls-notification__svg" id="notification" data-name="Group 2" xmlns="http://www.w3.org/2000/svg" width="212.573" height="264.414" viewBox="0 0 212.573 264.414">
-          <path data-name="Union 1" d="M0,226.1V208.633a112.039,112.039,0,0,0,19.8-40.519c6.349-24.557,5.594-43.528,5.594-57.712A80.327,80.327,0,0,1,85.613,32.639V7a7,7,0,0,1,7-7H118.76a7,7,0,0,1,7,7V32.62c34.971,8.894,61.55,40.389,61.55,77.834,0,12.249-1.408,30.408,5.495,54.677a172.445,172.445,0,0,0,19.768,43.5V226.1Z" transform="translate(0 0)" fill="#fff" />
-          <path data-name="Subtraction 1" d="M38.989,30H11A11,11,0,0,1,0,19V0H49.989V19a11,11,0,0,1-11,11Z" transform="translate(81.094 234.413)" fill="#fff" />
-        </svg>
-      </span>
-      <a class="controls-auth" href="#">Sign In</a>
-    </div>
-  </div>
 </div>

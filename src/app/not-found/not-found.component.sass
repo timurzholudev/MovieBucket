@@ -1,0 +1,51 @@
+@import 'partials/_color.vars.sass'
+@import 'partials/_mixins.sass'
+
+.not-found
+    width: 100%
+    height: calc(100vh - 170px)
+
+    &__content
+        color: $white-color
+        text-align: center
+
+    &__err
+        display: block
+        width: 100%
+        font-size: 8rem
+        line-height: 8.4rem
+        margin-bottom: 8px
+
+    &__title
+        margin-bottom: 8px
+        opacity: 0.8
+
+    &__info
+        margin-bottom: 8px
+        opacity: 0.7
+
+    &__btn
+        display: block
+        width: 180px
+        padding: 16px 0
+        background-color: $blue-color
+        margin: 24px auto 8px
+
+        @include media-lgUp
+            position: relative
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3)
+            @include transaction(opacity 0.3s ease-in-out)
+
+            &::before 
+                content: ' '
+                position: absolute
+                top: 0
+                right: 0
+                bottom: 0
+                left: 0
+                opacity: 0
+                @include box-shadow($theme-shadow-color)
+                @include transaction(opacity 0.3s ease-in-out)
+                            
+            &:hover::before 
+                opacity: 1

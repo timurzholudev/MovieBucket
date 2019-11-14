@@ -3,15 +3,11 @@ import { HomeAction, HomeActionType } from './actions';
 export interface HomeState {
     showGenre: boolean,
     showNotification: boolean,
-    movies: any,
-    error: string
 }
 
 const initialState: HomeState = {
     showGenre: false,
-    showNotification: false,
-    movies: null,
-    error: ''
+    showNotification: false
 }
 
 export function reducer(state = initialState, action: HomeAction): HomeState {
@@ -29,20 +25,6 @@ export function reducer(state = initialState, action: HomeAction): HomeState {
                 ...state,
                 showNotification: action.payload
             };
-
-        case HomeActionType.GetMovieListSuccess:
-            return {
-                ...state,
-                movies: action.payload,
-                error: ''
-            }
-
-        case HomeActionType.GetMovieListFail:
-            return {
-                ...state,
-                error: action.payload
-            }
-
 
         default:
             return state

@@ -28,9 +28,6 @@
         &__item
             width: $navbar-item-size
             height: $navbar-item-size
-
-            &--selected
-                background-color: $navbar-selected-color
             
             @include media-mdUp
                 width: $navbar-item-large-size
@@ -46,6 +43,8 @@
             color: $white-color
             flex-direction: column
 
+            &.active
+                background-color: $navbar-selected-color
         &__ico
             display: block
             margin: 0

@@ -1,0 +1,28 @@
+<div class="movie"
+     *ngIf="isMovieLoaded">
+    <div class="movie-cover">
+        <img class="movie-cover__img"
+             src="assets/images/movie-covers/{{movie.img}}"
+             alt="{{movie.name}} cover">
+    </div>
+    <div class="movie-info">
+        <h1 class="movie-info__title">{{movie.name}}</h1>
+        <span class="movie-info__data">
+            <span class="movie-info__text movie-info__text--tl">Genre: </span>
+            <span class="movie-info__text">{{movie.length}}</span>
+        </span>
+        <span class="movie-info__data">
+            <span class="movie-info__text movie-info__text--tl">Length: </span>
+            <span class="movie-info__text">{{movie.length}}</span>
+        </span>
+        <span class="movie-info__data">
+            <span class="movie-info__text movie-info__text--tl">Rating: </span>
+            <span class="movie-info__text">{{movie.rate}}/10</span>
+        </span>
+        <p class="movie-info__description">{{movie.description}}</p>
+    </div>
+</div>
+<div class="movie-loading flex flex--center flex--centered"
+     *ngIf="!isMovieLoaded">
+    <spinner></spinner>
+</div>

@@ -1,0 +1,17 @@
+<a class="movie"
+   [routerLink]="['/film', movie.key]">
+    <img class="movie__cover"
+         src="assets/images/movie-covers/{{movie.img}}"
+         alt="Film cover" />
+    <div class="movie__data">
+        <span class="movie__title">
+            <strong>{{movie.name}}</strong>
+        </span>
+        <div class="movie__info flex flex--centered">
+            <span class="movie__genres">
+                <span *ngFor="let genre of movie.genres">{{genre}}</span>
+            </span>
+            <span class="movie__rating">{{movie.rate}}/10</span>
+        </div>
+    </div>
+</a>

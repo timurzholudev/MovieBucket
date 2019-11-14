@@ -1,32 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
+import * as fromRoot from 'app/state/index'
 import * as fromHome from '../state'
+import * as movieActions from '@app/state/movies/action'
 import * as homeActions from '../state/actions'
+import { Observable, Subject } from 'rxjs';
+import { IMovie } from '@app/shared/models/movie.model';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.sass']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
-    public clickedVal: boolean;
+    public movies$: Observable<IMovie>
+    private unsubscribe$: Subject<void> = new Subject();
 
     constructor(
-        private store: Store<fromHome.State>
+        private store: Store<fromRoot.State>,
+        private homeStore: Store<fromHome.State>
     ) { }
 
     ngOnInit() {
-        this.store
-            .pipe(select(fromHome.getShowNotification))
-            .subscribe(products => this.clickedVal = products);
+        this.movies$ = this.store.select(fromRoot.getMoviesList);
+        this.movies$
+            .pipe(takeUntil(this.unsubscribe$))
+            .subscribe(moviesList => {
+                if (!moviesList)
+                    this.getMovieList()
+            });
     }
 
-    clickedValue() {
-        this.clickedVal = !this.clickedVal
-        this.store.dispatch(new homeActions.GetMovieList());
-        this.store.dispatch(new homeActions.ToggleShowGenre(this.clickedVal));
+    ngOnDestroy(): void {
+        this.unsubscribe$.next();
+        this.unsubscribe$.complete();
+    }
+
+    private getMovieList() {
+        this.store.dispatch(new movieActions.GetMovieList());
     }
 
 }

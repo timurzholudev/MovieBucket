@@ -1,0 +1,44 @@
+@import 'partials/_color.vars.sass'
+@import 'partials/_layout.vars.sass'
+@import 'partials/_mixins.sass'
+
+$distance: 16px    
+
+movie-item
+    display: block
+    width: 100%
+
+.container 
+    width: 100%
+    display: block
+    max-width: $max-width
+    margin: 0 auto
+    position: relative
+
+    .movie-group
+        padding: $distance
+
+        &__title
+            font-size: 1.4rem
+            color: $white-color
+            font-weight: 400
+
+    .movies-list
+        display: grid
+        padding: $distance
+        grid-gap: $distance
+        grid-template-columns: repeat(2, 1fr)
+        grid-auto-rows: 1fr
+
+        @include media-smUp
+            grid-template-columns: repeat(3, 1fr)
+
+        @include media-mdUp
+            grid-template-columns: repeat(4, 1fr)
+
+        @include media-lgUp
+            grid-template-columns: repeat(5, 1fr)
+
+        @include media-xlUp
+            grid-template-columns: repeat(6, 1fr)
+        

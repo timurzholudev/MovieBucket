@@ -1,0 +1,30 @@
+@import 'partials/_color.vars.sass'
+@import 'partials/_layout.vars.sass'
+@import 'partials/_mixins.sass'
+
+.about
+    width: 100%
+    display: block
+    margin: 0 auto
+    position: relative
+
+    @include media-mdUp        
+        max-width: 600px
+    
+    @include media-lgUp
+        max-width: 800px
+
+    @include media-xlUp
+        max-width: $max-width
+
+    &__content
+        color: rgba($white-color, 0.8)
+        
+    &__title
+        font-size: 2rem
+        margin-bottom: 16px
+    
+    &__text
+        font-size: 0.9rem
+        line-height: 1.5rem
+        margin-bottom: 16px

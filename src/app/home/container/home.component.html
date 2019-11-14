@@ -1,1 +1,10 @@
-<p (click)="clickedValue(clickedVal)">{{ clickedVal }} home works!!</p>
+<div class="container">
+    <div class="movie-group">
+        <h2 class="movie-group__title">Recently Added</h2>
+        <div class="filter"></div>
+    </div>
+    <div class="movies-list">
+        <movie-item *ngFor="let movie of movies$ | async"
+                    [movie]="movie"></movie-item>
+    </div>
+</div>
