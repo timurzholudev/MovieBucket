@@ -16,8 +16,10 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
+    public filters
     public movies$: Observable<IMovie>
     private unsubscribe$: Subject<void> = new Subject();
+    public filterList: string[] = [];
 
     constructor(
         private store: Store<fromRoot.State>,
@@ -37,6 +39,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         this.unsubscribe$.next();
         this.unsubscribe$.complete();
+    }
+
+    public filterMovieList(value) {
+        this.filterList = [...value]
+
     }
 
     private getMovieList() {

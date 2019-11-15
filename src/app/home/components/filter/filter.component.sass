@@ -1,0 +1,45 @@
+@import 'partials/_color.vars.sass'
+@import 'partials/_layout.vars.sass'
+@import 'partials/_mixins.sass'
+
+
+.filter
+    width: 100%
+    height: 100%
+
+    &__content
+        padding: 16px
+        color: $white-color
+
+    &__item
+        padding: 8px
+
+    &__input
+        visibility: hidden
+
+        
+    &__check
+        width: 1rem
+        height: 1rem
+        border: 2px solid $blue-color
+        margin-right: 16px
+        border-radius: 1px
+        position: relative
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+    
+    &__input:checked ~ &__check::after
+        content: ""
+        width: 0.5rem
+        height: 0.5rem
+        background-color: #1D32BC
+        // position: absolute
+        // left: 0
+        // right: 0
+        // top: 0
+
+             
+    &__text
+        text-transform: capitalize

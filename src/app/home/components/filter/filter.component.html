@@ -1,0 +1,14 @@
+<div class="filter">
+    <div class="filter__content">
+        <label *ngFor="let item of GenreType | enumToArray"
+               class="filter__item flex flex--left flex--centered"
+               for="{{item}}">
+            <input type="checkbox"
+                   id="{{item}}"
+                   class="filter__input"
+                   (change)="test(item)">
+            <span class="filter__check"></span>
+            <span class="filter__text">{{item}}</span>
+        </label>
+    </div>
+</div>

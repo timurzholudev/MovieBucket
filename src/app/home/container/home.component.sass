@@ -17,6 +17,7 @@ movie-item
 
     .movie-group
         padding: $distance
+        justify-content: space-between
 
         &__title
             font-size: 1.4rem
@@ -42,3 +43,25 @@ movie-item
         @include media-xlUp
             grid-template-columns: repeat(6, 1fr)
         
+.filter
+    &-wrapper
+        position: relative
+        z-index: 1
+
+        filter
+            display: block
+            position: absolute
+            right: 0
+            top: 25px
+            width: 200px
+            height: auto
+            min-height: 100px
+            background-color: $dark-color
+            @include box-shadow($theme-shadow-color)
+    
+    &-btn
+        color: $white-color
+        cursor: pointer
+
+        svg
+            margin-left: 8px

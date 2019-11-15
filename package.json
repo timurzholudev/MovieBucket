@@ -9,6 +9,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timurzholudev/MovieBucket.git"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.12",
