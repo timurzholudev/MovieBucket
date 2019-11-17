@@ -1,27 +1,44 @@
-# MoviesApp
+# MovieBucket
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.15.
+MovieBucket is an Angular web application for displaying list of movies.
+- Displaying list of films
+- Movies can be searched with a search field
+- Movies can be filter by genres
+- User friendly design
+- Mobile first aproach
+
+## Tech
+- Angular 8
+- Routing
+- Lazy loading
+- RxJS/Observables
+- NgRx
+
+## Installation
+
+In order to install MovieBucket app you need to have `Node.js` and `npm` installed on your machine. You can install Node.js from [here](https://nodejs.org/en/)
+
+1. Clone MovieBucket project form [GitHub](https://github.com/timurzholudev/MovieBucket) 
+```bash
+git clone https://github.com/timurzholudev/MovieBucket.git
+```
+
+2. Navigate to MovieBucket folder `cd MovieBucket`
+
+3. Run `npm install` to install all required packages
+
+4. Run `npm start` to start development server
 
 ## Development server
+After installation to start development server run `npm start`. Navigate to `http://localhost:4200/`. App will automatically reload if you change any source files.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Development/Production build
+Run `npm run build` to build project in development mode. To build for production use `--prod` flag. Build files will be stored in the `dist/` directory
 
-## Code scaffolding
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Please make sure to update tests as appropriate.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
