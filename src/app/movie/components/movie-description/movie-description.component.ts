@@ -2,14 +2,15 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 import { IMovie } from '@app/shared/models/movie.model';
 
 @Component({
-    selector: 'movie-item',
-    templateUrl: './movie-item.component.html',
-    styleUrls: ['./movie-item.component.sass']
+    selector: 'movie-desc',
+    templateUrl: './movie-description.component.html',
+    styleUrls: ['./movie-description.component.sass']
 })
-export class MovieItemComponent implements OnInit, OnChanges {
+export class MovieDescriptionComponent implements OnInit, OnChanges {
 
     @Input() movie: IMovie
     public isMovieLoaded: boolean = false
+
     constructor() { }
 
     ngOnInit() {

@@ -1,25 +1,54 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+// import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+// import { HomeComponent } from './home.component';
+// import { By } from 'protractor';
+// import { FilterComponent } from '../components/filter/filter.component';
+// import { FilterPipe } from '@app/shared/pipes/filter-movie.pipe';
+// import { MovieItemComponent } from '@app/_ui/movie-item/movie-item.component';
+// import { EnumToArrayPipe } from '@app/shared/pipes/enum-to-Array.pipe';
+// import { RouterTestingModule } from '@angular/router/testing';
+// import { TestStore } from '@app/state/test.store';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+// import * as fromRoot from 'app/state/index'
+// import * as fromHome from '../state'
+// import { Store } from '@ngrx/store';
+// import { IMovie } from '@app/shared/models/movie.model';
+// import { MoviesState } from '@app/state/movies/reducer';
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
-    })
-    .compileComponents();
-  }));
+// describe('HomeComponent', () => {
+//     let component: HomeComponent;
+//     let fixture: ComponentFixture<HomeComponent>;
+//     let rootStore: TestStore<fromRoot.State>;
+//     let homeStore: TestStore<fromHome.State>;
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//     beforeEach(async(() => {
+//         TestBed.configureTestingModule({
+//             declarations: [HomeComponent, FilterComponent, FilterPipe, MovieItemComponent, EnumToArrayPipe],
+//             imports: [RouterTestingModule],
+//             providers: [
+//                 { provide: Store, useClass: TestStore },
+//             ]
+//         })
+//             .compileComponents();
+//     }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//     beforeEach(inject([Store], (testStore: TestStore<fromRoot.State>) => {
+//         let st: MoviesState = {
+//             moviesList: null,
+//             isMoviesLoaded: false,
+//             error: ''
+//         }
+//         rootStore = testStore;  // save store reference for use in tests                                  
+//         rootStore.setState({ movies: st }); // set default state
+//     }));
+
+//     beforeEach(() => {
+//         fixture = TestBed.createComponent(HomeComponent);
+//         component = fixture.componentInstance;
+//         fixture.detectChanges();
+//     });
+
+//     it('should create', () => {
+//         expect(component).toBeTruthy();
+//     });
+// });

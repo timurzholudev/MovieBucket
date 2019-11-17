@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
+import { IMovie } from '../models/movie.model';
 
 @Injectable({ providedIn: 'root' })
 export class MoviesService {
@@ -12,10 +13,10 @@ export class MoviesService {
         private http: HttpClient
     ) { }
 
-    getMoviesList(): Observable<any> {
+    getMoviesList(): Observable<IMovie[]> {
         return this.http.get(this._movieUrl)
             .pipe(
-                map(resp => <any>resp),
+                map(resp => <IMovie[]>resp),
                 catchError(err => { throw err.status })
             );
     }

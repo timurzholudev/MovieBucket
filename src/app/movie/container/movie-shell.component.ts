@@ -34,10 +34,8 @@ export class MovieShellComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this.unsubscribe$))
             .subscribe(resp => {
                 if (resp) {
-                    console.log('Have movies')
                     this.getMovieByKey();
                 } else {
-                    console.log('No movies')
                     this.store.dispatch(new movieActions.GetMovieList())
                 }
             });
@@ -45,9 +43,7 @@ export class MovieShellComponent implements OnInit, OnDestroy {
         this._actionSubject
             .pipe(takeUntil(this.unsubscribe$))
             .subscribe(data => {
-                console.log(data.type)
                 if (data.type === movieActions.MovieActionType.GetMovieListSuccess) {
-                    console.log('Movie Success')
                     this.getMovieByKey();
                 }
             });

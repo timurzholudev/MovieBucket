@@ -1,4 +1,5 @@
-<div class="container flex flex--left">
+<div class="container flex flex--left"
+     [@slideIn]>
     <a routerLink="/"
        class="main-logo flex flex--center flex--centered">
         <span class="main-logo__name">MBucket</span>
@@ -8,7 +9,7 @@
             <li class="navbar__item">
                 <a routerLink="/"
                    routerLinkActive="active"
-                   [routerLinkActiveOptions]="{exact: true}"
+                   routerLinkActiveOptions="{exact: true}"
                    class="navbar__link flex flex--center flex--centered">
                     <svg class="navbar__ico"
                          xmlns="http://www.w3.org/2000/svg"

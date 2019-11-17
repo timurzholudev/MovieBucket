@@ -20,7 +20,7 @@ movie-item
         justify-content: space-between
 
         &__title
-            font-size: 1.4rem
+            font-size: 1rem
             color: $white-color
             font-weight: 400
 
@@ -48,20 +48,19 @@ movie-item
         position: relative
         z-index: 1
 
-        filter
-            display: block
-            position: absolute
-            right: 0
-            top: 25px
-            width: 200px
-            height: auto
-            min-height: 100px
-            background-color: $dark-color
-            @include box-shadow($theme-shadow-color)
-    
     &-btn
         color: $white-color
         cursor: pointer
 
         svg
             margin-left: 8px
+
+filter
+    display: block
+    // position: absolute
+    // right: -16px
+    // top: 25px
+    width: 100vw
+    height: auto
+    margin-top: 16px
+    background-color: $dark-color

@@ -2,7 +2,8 @@
     <div class="movie-group flex flex--centered">
         <h2 class="movie-group__title">Recently Added</h2>
         <div class="filter-wrapper">
-            <span class="filter-btn flex flex--left flex--centered">
+            <span (click)="toggleFilter()"
+                  class="filter-btn flex flex--left flex--centered">
                 <span>Filter by genre</span>
                 <svg xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -37,9 +38,12 @@
                     </g>
                 </svg>
             </span>
-            <filter [filterList]="filterList"
-                    (newFilterList)="filterMovieList($event)"></filter>
         </div>
+        <filter *ngIf="showFilter"
+                #filter
+                [@slideToggle]
+                [filterList]="filterList"
+                (newFilterList)="filterMovieList($event)"></filter>
     </div>
     <div class="movies-list">
         <movie-item *ngFor="let movie of movies$ | async | filter:filterList"

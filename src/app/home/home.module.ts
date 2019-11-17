@@ -13,7 +13,6 @@ import { MovieItemModule } from '@app/_ui/movie-item/movie-item.module';
 import { FilterComponent } from './components/filter/filter.component';
 import { EnumToArrayPipe } from '@app/shared/pipes/enum-to-Array.pipe';
 import { FilterPipe } from '@app/shared/pipes/filter-movie.pipe';
-// import { MovieItemComponent } from './components/movie-item/movie-item.component';
 
 
 @NgModule({

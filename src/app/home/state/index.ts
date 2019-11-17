@@ -13,7 +13,7 @@ export const getShowGenre = createSelector(
     state => state.showGenre
 );
 
-export const getShowNotification = createSelector(
+export const getFilterList = createSelector(
     getHomeFeatureState,
-    state => state.showNotification
+    state => state.filterList
 );

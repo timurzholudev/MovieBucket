@@ -2,28 +2,27 @@ import { HomeAction, HomeActionType } from './actions';
 
 export interface HomeState {
     showGenre: boolean,
-    showNotification: boolean,
+    filterList: string[],
 }
 
 const initialState: HomeState = {
     showGenre: false,
-    showNotification: false
+    filterList: []
 }
 
 export function reducer(state = initialState, action: HomeAction): HomeState {
     switch (action.type) {
 
         case HomeActionType.ToggleShowGenre:
-            console.log(JSON.stringify(state), action.payload);
             return {
                 ...state,
                 showGenre: action.payload
             };
 
-        case HomeActionType.ToggleShowNotification:
+        case HomeActionType.SetMoviesFilter:
             return {
                 ...state,
-                showNotification: action.payload
+                filterList: action.payload
             };
 
         default:

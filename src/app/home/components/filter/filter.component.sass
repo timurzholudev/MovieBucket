@@ -8,8 +8,18 @@
     height: 100%
 
     &__content
-        padding: 16px
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 8px
+        padding: 8px
         color: $white-color
+
+        @include media-smUp
+            grid-template-columns: repeat(3, 1fr)
+
+        @include media-mdUp
+            grid-template-columns: repeat(4, 1fr)
+
 
     &__item
         padding: 8px

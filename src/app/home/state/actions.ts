@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 
 export enum HomeActionType {
     ToggleShowGenre = "[Home] Toggle Show Genre",
-    ToggleShowNotification = "[Home] Toggle Show Notification"
+    SetMoviesFilter = "[Movie] Set Movies Filter"
 };
 
 export class ToggleShowGenre implements Action {
@@ -10,12 +10,12 @@ export class ToggleShowGenre implements Action {
     constructor(public payload: boolean) { }
 }
 
-export class ToggleShowNotification implements Action {
-    readonly type = HomeActionType.ToggleShowNotification;
-    constructor(public payload: boolean) { }
+export class SetMoviesFilter implements Action {
+    readonly type = HomeActionType.SetMoviesFilter;
+    constructor(public payload: string[]) { }
 }
 
 
 export type HomeAction =
     | ToggleShowGenre
-    | ToggleShowNotification;
+    | SetMoviesFilter;

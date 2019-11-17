@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { environment } from 'environments/environment';
 import { HttpClientModule } from '@angular/common/http'
+import {  BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 
 // NGRX -->
@@ -22,6 +23,7 @@ import { AppComponent } from './app.component';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
+        BrowserAnimationsModule,
         CoreModule,
         StoreModule.forRoot(reducers),
         EffectsModule.forRoot([MovieEffects]),

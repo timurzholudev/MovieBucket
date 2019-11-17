@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MovieRoutingModule } from './movie-routing.module';
 import { MovieShellComponent } from './container/movie-shell.component';
-import { MovieItemComponent } from './components/movie-item/movie-item.component';
+import { MovieDescriptionComponent } from './components/movie-description/movie-description.component';
 import { SpinnerModule } from '@app/_ui/spinner/spinner.module';
 
 
@@ -15,7 +15,7 @@ import { SpinnerModule } from '@app/_ui/spinner/spinner.module';
     ],
     declarations: [
         MovieShellComponent,
-        MovieItemComponent
+        MovieDescriptionComponent
     ],
 })
 export class MovieModule { }

@@ -16,8 +16,6 @@ export class SpinnerComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        console.log("!!!!!!!!!!!!!!!")
-        console.log(this.spinner.nativeElement.offsetWidth)
         this.spinner.nativeElement.style.width = `${50}px`;
         this.spinner.nativeElement.style.height = `${50}px`;
     }
