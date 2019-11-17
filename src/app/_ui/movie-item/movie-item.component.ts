@@ -8,7 +8,7 @@ import { IMovie } from '@app/shared/models/movie.model';
 })
 export class MovieItemComponent implements OnInit {
 
-    @Input() movie: IMovie[]
+    @Input() movie: IMovie
 
     constructor() { }
 

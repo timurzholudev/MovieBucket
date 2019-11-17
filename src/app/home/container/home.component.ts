@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     public filterList: string[]
     public showFilter: boolean
 
-    public movies$: Observable<IMovie>
+    public movies$: Observable<IMovie[]>
     private unsubscribe$: Subject<void> = new Subject();
 
     constructor(
