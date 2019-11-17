@@ -9,7 +9,10 @@
         <h1 class="movie-info__title">{{movie.name}}</h1>
         <span class="movie-info__data">
             <span class="movie-info__text movie-info__text--tl">Genre: </span>
-            <span class="movie-info__text">{{movie.length}}</span>
+            <span class="movie-info__text"
+                  *ngFor="let genre of movie.genres">
+                <span>{{genre}}</span>
+            </span>
         </span>
         <span class="movie-info__data">
             <span class="movie-info__text movie-info__text--tl">Length: </span>
