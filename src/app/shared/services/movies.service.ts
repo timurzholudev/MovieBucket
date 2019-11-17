@@ -7,7 +7,7 @@ import { IMovie } from '../models/movie.model';
 @Injectable({ providedIn: 'root' })
 export class MoviesService {
 
-    private _movieUrl: string = '/assets/data/movie.mock-data.json';
+    private _movieUrl: string = './assets/data/movie.mock-data.json';
 
     constructor(
         private http: HttpClient
